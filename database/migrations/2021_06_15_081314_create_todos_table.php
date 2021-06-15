@@ -15,6 +15,12 @@ class CreateTodosTable extends Migration
     {
         Schema::create('todos', function (Blueprint $table) {
             $table->id();
+            $table->number('user_id');
+            $table->string('title')->unique();
+            $table->integer('duration');
+            $table->dateTime('start_time');
+            $table->enum('priority', ['high', 'medium','low']);
+            $table->enum('status', ['complete', 'not complete','not done']);
             $table->timestamps();
         });
     }
