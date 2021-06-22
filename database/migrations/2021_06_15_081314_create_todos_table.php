@@ -15,7 +15,7 @@ class CreateTodosTable extends Migration
     {
         Schema::create('todos', function (Blueprint $table) {
             $table->id();
-            $table->number('user_id');
+            $table->integer('user_id');
             $table->string('title')->unique();
             $table->integer('duration');
             $table->dateTime('start_time');
